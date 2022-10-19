@@ -8,8 +8,8 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2 (1:1.2.1+202207142221+cd75a1ee6d)"
-   sodipodi:docname="go_back.svg"
-   inkscape:export-filename="go_back.png"
+   sodipodi:docname="go_back_hover.svg"
+   inkscape:export-filename="go_back_hover.png"
    inkscape:export-xdpi="96.1292"
    inkscape:export-ydpi="96.1292"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -30,7 +30,7 @@
      showgrid="false"
      inkscape:zoom="3.875"
      inkscape:cx="15.354839"
-     inkscape:cy="15.354839"
+     inkscape:cy="15.612903"
      inkscape:window-width="1366"
      inkscape:window-height="710"
      inkscape:window-x="0"
@@ -47,7 +47,7 @@
          offset="0"
          id="stop1093" />
       <stop
-         style="stop-color:#ea8869;stop-opacity:1;"
+         style="stop-color:#e03a00;stop-opacity:1;"
          offset="1"
          id="stop1095" />
     </linearGradient>
