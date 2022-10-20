@@ -39,6 +39,7 @@ class mygameclass{
         this.winner={}
         this.winner[this.image[0]]='oks';
         this.winner[this.image[1]]='iks';
+        this.emptyspace_tracker=this.no_rows*this.no_columns
     }
 
     generate_divs(){
@@ -86,6 +87,10 @@ class mygameclass{
                 if (!alert('User '+this.winner[image_to_check]+' has won.')){this.new_game()}//there is an issue with alert in current version of firefox
                 })
             
+        }else if (this.emptyspace_tracker==0){
+            this.sleep(200).then(() => {
+                if (!alert('There is no winner.')){this.new_game()}//issues with alert in new version of firefox
+                })
         }
     }
 
@@ -181,6 +186,7 @@ class mygameclass{
 
 
     main_insert(id){
+        this.emptyspace_tracker--
         var element=document.getElementById(id)
         let insert_finish=this.insert(element);
         if (insert_finish==0){
