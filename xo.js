@@ -40,24 +40,7 @@ class mygameclass{
         this.winner[this.image[0]]='oks';
         this.winner[this.image[1]]='iks';
     }
-    //not used anymore
-/*     generate_buttons(){
-        for (var ii=0;ii<this.no_rows;ii++){
-            let div = document.createElement("div");
-            div.className = 'row';
-            div.id=ii;
-            div.style.width=(30*this.no_columns)+'px';
-            document.body.appendChild(div);
-            for (var jj=0;jj<this.no_columns;jj++){
-                var button = document.createElement("INPUT");
-                button.className = 'column';
-                button.id=ii+'_'+jj
-                button.setAttribute("type", "button")
-                button.setAttribute("onclick", "window.myglobal_a.main_insert(id)")
-                document.getElementById(ii).appendChild(button);
-            }
-        }
-    } */
+
     generate_divs(){
         for (var ii=0;ii<this.no_rows;ii++){
             let divr = document.createElement("div");
@@ -87,8 +70,10 @@ class mygameclass{
 
     go_back(id){
         document.getElementById(id).style.backgroundImage=this.imageclickbutton;
-        this.sleep(100);
-        window.location.reload()
+        this.sleep(100).then(() => {
+            window.location.reload()
+            })
+        
     }
 
 
@@ -97,7 +82,10 @@ class mygameclass{
         var columnidx=parseInt(id.match(/\d$/))
         var image_to_check = document.getElementById(id).style.backgroundImage
         if (this.check_h(rowidx,columnidx,image_to_check)==this.win_condition || this.check_v(rowidx,columnidx,image_to_check)==this.win_condition || this.check_D1(rowidx,columnidx,image_to_check)==this.win_condition ||this.check_D2(rowidx,columnidx,image_to_check)==this.win_condition ){
-            if (!alert('User '+this.winner[image_to_check]+' has won.')){this.new_game()}
+            this.sleep(200).then(() => {
+                if (!alert('User '+this.winner[image_to_check]+' has won.')){this.new_game()}//there is an issue with alert in current version of firefox
+                })
+            
         }
     }
 
